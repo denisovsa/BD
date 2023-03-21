@@ -23,5 +23,10 @@ namespace Kingsman.Windows
         {
             InitializeComponent();
         }
+
+        private void OrSignGog_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

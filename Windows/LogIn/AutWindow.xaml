@@ -1,12 +1,250 @@
-﻿<Window x:Class="Kingsman.Windows.AutWindow"
+﻿<!--<Window x:Class="Kingsman.Windows.AutWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kingsman.Windows"
         mc:Ignorable="d"
-        Title="AutWindow" Height="450" Width="800">
+        Title="AutWindow" Height="550" Width="300" Background="#2E303E">
     <Grid>
-        
+      
+        <StackPanel>
+            <TextBlock Text="Login"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                       Foreground="#54678F"
+                       Margin=" 0 100 0 0"/>
+
+            <TextBlock Text="Username"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                       Foreground="#54678F"
+                       Margin=" 0 10 90 0"/>
+          
+
+            <TextBox x:Name="TbLogin"
+                     Text="говно"
+                     Background="#9199BE"
+                     Foreground="#54678F"
+                     Width="150"
+                     Margin="0 10 0 0"/>
+
+
+            <TextBlock Text="Password"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"
+                        Foreground="White"
+                       Margin=" 0 10 90 0"/>
+
+            <PasswordBox x:Name="TbPassword"
+                     Width="150"
+                     Background="#9199BE"
+                     Margin="0 10 0 0"/>
+
+
+        </StackPanel>
+    </Grid>
+</Window>-->
+
+
+<Window x:Class="Kingsman.Windows.AutWindow" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:local="clr-namespace:Kingsman.Windows" 
+        mc:Ignorable="d" 
+        Title="AutWindow"  
+        Height="800" 
+        Width="800" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="SingleBorderWindow" 
+        AllowsTransparency="False" 
+        Background="Black" 
+        >
+    <Grid x:Name="AutWin"  
+          >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF8C6CE8"/>
+                <GradientStop Color="#FF42B1CE" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Border  
+            Height="700"  
+            Width="400" 
+            CornerRadius="30"  BorderThickness="20"  
+            Background="White"  
+            Margin="200,42,200,42" 
+             
+              >
+
+            <StackPanel>
+                <TextBlock 
+                Text="Login" 
+                Margin="0 80 0 0" 
+                HorizontalAlignment="Center" 
+                FontWeight="Bold" 
+                FontSize="22"  
+             />
+                <TextBlock 
+                Text="Username" 
+                Margin="0 70 150 0" 
+                HorizontalAlignment="Center" 
+                FontWeight="SemiBold" 
+                FontSize="12" 
+             />
+                <TextBox 
+                Margin="0 10 0 0"   
+                HorizontalAlignment="Center"  
+                Width="220" 
+                Height="20"  
+                BorderThickness="0,0,0,1" 
+                ToolTip="Type your username" 
+                 
+                />
+                <TextBlock 
+                Text="Password" 
+                Margin="0 20 150 0" 
+                HorizontalAlignment="Center" 
+                FontWeight="SemiBold"  
+                FontSize="12" 
+             />
+                <PasswordBox  
+                Name="PasswordBox" 
+                Margin="0 10 0 0"   
+                HorizontalAlignment="Center"  
+                Width="220" 
+                Height="20" 
+                BorderThickness="0,0,0,1" 
+                ToolTip="Type your password" 
+            />
+                <Button 
+                x:Name="ButForgotPas" 
+                Margin="130 10 0 0"   
+                HorizontalAlignment="Center"  
+                Width="70" 
+                Height="20"  
+                Content="Forgot password?"  
+                Background="White"  
+                Foreground="Gray" 
+                BorderThickness="0,0,0,0" 
+                FontSize="8" 
+            />
+                <Button 
+                x:Name="ButLog" 
+                Margin="0 30 0 0"   
+                HorizontalAlignment="Center"  
+                Width="160" 
+                Height="35" 
+                Content="Login" 
+                FontWeight="Bold"  
+                Foreground="White"  
+                BorderBrush="White" 
+                FontFamily="Tahoma"  
+                 
+            >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF47B5DA" Offset="1"/>
+                            <GradientStop Color="#FFA694E8" Offset="0.172"/>
+
+
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+                <TextBlock 
+                x:Name="OrSign" 
+                Margin="10 10 0 0"
+HorizontalAlignment="Center"  
+                Width="70" 
+                Height="20"  
+                Text="Or Sign Up Using" 
+                Background="White"  
+                Foreground="Gray" 
+                FontSize="8"/>
+
+
+
+                <Button 
+                x:Name="OrSignVK" 
+                Margin="10 10 100 0"   
+                HorizontalAlignment="Center" 
+                Width="30" 
+                Height="30" BorderBrush="White" 
+                    >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Image/Vk.png"
+                                    />
+                    </Button.Background>
+                </Button>
+                <Button 
+                x:Name="OrSignGog" 
+                Margin="10 -30 0 0"   
+                HorizontalAlignment="Center" 
+                Width="30" 
+                Height="30" Click="OrSignGog_Click" 
+                    >
+                    <Button.BorderBrush>
+                        <ImageBrush/>
+                    </Button.BorderBrush>
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Image/Google.png" Stretch="Uniform" TileMode="None">
+                            <!--<ImageBrush.RelativeTransform>
+                                <TransformGroup>
+                                    <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="4" ScaleY="4"/>
+                                    <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                                    <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                                    <TranslateTransform/>-->
+                                <!--</TransformGroup>
+                            </ImageBrush.RelativeTransform>-->
+                        </ImageBrush>
+                    </Button.Background>
+                </Button>
+                <Button 
+                x:Name="OrSignTeleg" 
+                Margin="10 -30 -100 0"   
+                HorizontalAlignment="Center" 
+                Width="30" 
+                Height="30" BorderBrush="White" 
+                    >
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Image/Telegram.png"/>
+                    </Button.Background>
+                </Button>
+
+                <TextBlock 
+                x:Name="NotAc" 
+                Margin="10 100 0 0"   
+                HorizontalAlignment="Center"  
+                Width="80" 
+                Height="10"  
+                Text="Have not account yet?" 
+                Background="White"  
+                Foreground="Gray" 
+                FontSize="8"/>
+
+                <Button 
+                x:Name="SignUp" 
+                Margin="0 20 0 0"   
+                HorizontalAlignment="Center"  
+                Width="70" 
+                Height="20"  
+                Content="SIGN UP"  
+                FontWeight="ExtraBlack" 
+                Background="White"                 
+                BorderThickness="0,0,0,0" 
+                FontSize="8" FontFamily="Tahoma" 
+                />
+
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
