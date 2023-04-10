@@ -1,53 +1,4 @@
-﻿<!--<Window x:Class="Kingsman.Windows.AutWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Kingsman.Windows"
-        mc:Ignorable="d"
-        Title="AutWindow" Height="550" Width="300" Background="#2E303E">
-    <Grid>
-      
-        <StackPanel>
-            <TextBlock Text="Login"
-                       HorizontalAlignment="Center"
-                       FontWeight="Bold"
-                       Foreground="#54678F"
-                       Margin=" 0 100 0 0"/>
-
-            <TextBlock Text="Username"
-                       HorizontalAlignment="Center"
-                       FontWeight="Bold"
-                       Foreground="#54678F"
-                       Margin=" 0 10 90 0"/>
-          
-
-            <TextBox x:Name="TbLogin"
-                     Text="говно"
-                     Background="#9199BE"
-                     Foreground="#54678F"
-                     Width="150"
-                     Margin="0 10 0 0"/>
-
-
-            <TextBlock Text="Password"
-                       HorizontalAlignment="Center"
-                       FontWeight="Bold"
-                        Foreground="White"
-                       Margin=" 0 10 90 0"/>
-
-            <PasswordBox x:Name="TbPassword"
-                     Width="150"
-                     Background="#9199BE"
-                     Margin="0 10 0 0"/>
-
-
-        </StackPanel>
-    </Grid>
-</Window>-->
-
-
-<Window x:Class="Kingsman.Windows.AutWindow" 
+﻿<Window x:Class="Kingsman.Windows.AutWindow" 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -170,7 +121,6 @@ HorizontalAlignment="Center"
                 Background="White"  
                 Foreground="Gray" 
                 FontSize="8"/>
-
 
 
                 <Button 
