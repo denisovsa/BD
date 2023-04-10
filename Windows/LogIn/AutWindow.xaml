@@ -140,7 +140,7 @@ HorizontalAlignment="Center"
                 Margin="10 -30 0 0"   
                 HorizontalAlignment="Center" 
                 Width="30" 
-                Height="30" Click="OrSignGog_Click" 
+                Height="30" 
                     >
                     <Button.BorderBrush>
                         <ImageBrush/>

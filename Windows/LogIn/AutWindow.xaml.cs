@@ -19,39 +19,43 @@ namespace Kingsman.Windows
     /// </summary>
     public partial class AutWindow : Window
     {
-    /// <summary>
-    /// что бы видно пароль кароч
-    /// </summary>
+        /// <summary>
+        /// что бы видно пароль кароч
+        /// </summary>
         public AutWindow()
         {
             InitializeComponent();
-            PasswordBox.Visibility = Visibility.Visible;
+            //PasswordBox.Visibility = Visibility.Visible;
 
         }
 
-        private void OrSignGog_Click(object sender, RoutedEventArgs e)
-        {
-            // проверка на наличие пользователя
-            var userAuth = ClassHelper.EF.Context.Employee.ToList().
-                Where(i => i.Login == TbLogin.Text && i.Password == PbPassword.Password).
-                FirstOrDefault();
-            if (userAuth != null)
-            {
-                // переход на окно список услуг
-                ServiceWindow serviceWindow = new ServiceWindow();
-                serviceWindow.Show();
-                this.Close();
-            }
-            else
-            {
-                // если пользователь не найден
-                MessageBox.Show("Пользователя не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-        }
+    //    private void OrSignGog_Click(object sender, RoutedEventArgs e)
+    //    {
+    //        // проверка на наличие пользователя
+    //        var userAuth = ClassHelper.EF.Context.Employee.ToList().
+    //            Where(i => i.Login == TbLogin.Text && i.Password == PbPassword.Password).
+    //            FirstOrDefault();
+    //        if (userAuth != null)
+    //        {
+    //            // переход на окно список услуг
+    //            ServiceWindow serviceWindow = new ServiceWindow();
+    //            serviceWindow.Show();
+    //            this.Close();
+    //        }
+    //        else
+    //        {
+    //            // если пользователь не найден
+    //            MessageBox.Show("Пользователя не существует", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+    //        }
+    //    }
     }
 }
 
 
+//
+//
+//
+//
 //
 //
 //
