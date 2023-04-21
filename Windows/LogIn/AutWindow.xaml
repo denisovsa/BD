@@ -40,6 +40,7 @@
                 FontSize="22"  
              />
                 <TextBlock 
+                 x:Name="TbLogin"
                 Text="Username" 
                 Margin="0 70 150 0" 
                 HorizontalAlignment="Center" 
@@ -63,7 +64,7 @@
                 FontSize="12" 
              />
                 <PasswordBox  
-                Name="PasswordBox" 
+                x:Name="PbPassword"
                 Margin="0 10 0 0"   
                 HorizontalAlignment="Center"  
                 Width="220" 
@@ -89,11 +90,12 @@
                 HorizontalAlignment="Center"  
                 Width="160" 
                 Height="35" 
-                Content="Login" 
+                Content="Sign In" 
                 FontWeight="Bold"  
                 Foreground="White"  
                 BorderBrush="White" 
                 FontFamily="Tahoma"  
+                Click="BtnSignIn_Click"
                  
             >
                     <Button.Background>
@@ -152,8 +154,8 @@ HorizontalAlignment="Center"
                                     <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="4" ScaleY="4"/>
                                     <SkewTransform CenterX="0.5" CenterY="0.5"/>
                                     <RotateTransform CenterX="0.5" CenterY="0.5"/>
-                                    <TranslateTransform/>-->
-                                <!--</TransformGroup>
+                                    <TranslateTransform/>
+                                </TransformGroup>
                             </ImageBrush.RelativeTransform>-->
                         </ImageBrush>
                     </Button.Background>
@@ -192,6 +194,7 @@ HorizontalAlignment="Center"
                 Background="White"                 
                 BorderThickness="0,0,0,0" 
                 FontSize="8" FontFamily="Tahoma" 
+                Click="BtnSignUp_Click"
                 />
 
             </StackPanel>

@@ -4,17 +4,35 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6ead8b381fd841978e5482366f4607a9" Name="Diagram1" ZoomLevel="149">
-        <EntityTypeShape EntityType="KingsmanModel.Client" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="KingsmanModel.Employees" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="KingsmanModel.Order" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="KingsmanModel.OrderService" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KingsmanModel.Service" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KingsmanModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="KingsmanModel.FK_Order_Client" ManuallyRouted="false" />
-        <AssociationConnector Association="KingsmanModel.FK_Order_Employees" ManuallyRouted="false" />
-        <AssociationConnector Association="KingsmanModel.FK_OrderService_Order" ManuallyRouted="false" />
-        <AssociationConnector Association="KingsmanModel.FK_OrderService_Service" ManuallyRouted="false" />
+      <Diagram DiagramId="fb318ceaa7c74dd2b698a248d7072d50" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="KingsmanModel.Client" Width="1.5" PointX="0.75" PointY="11" />
+        <EntityTypeShape EntityType="KingsmanModel.Employee" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="KingsmanModel.Gender" Width="1.5" PointX="1.5" PointY="19.25" />
+        <EntityTypeShape EntityType="KingsmanModel.Material" Width="1.5" PointX="3" PointY="7.5" />
+        <EntityTypeShape EntityType="KingsmanModel.MaterialService" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="KingsmanModel.Order" Width="1.5" PointX="3" PointY="13.625" />
+        <EntityTypeShape EntityType="KingsmanModel.OrderService" Width="1.5" PointX="5.25" PointY="3.75" />
+        <EntityTypeShape EntityType="KingsmanModel.Position" Width="1.5" PointX="1.5" PointY="26.375" />
+        <EntityTypeShape EntityType="KingsmanModel.Product" Width="1.5" PointX="7.75" PointY="2.125" />
+        <EntityTypeShape EntityType="KingsmanModel.Service" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="KingsmanModel.ServiceType" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="KingsmanModel.Size" Width="1.5" PointX="1.5" PointY="16.875" />
+        <EntityTypeShape EntityType="KingsmanModel.Supplier" Width="1.5" PointX="3" PointY="10.625" />
+        <EntityTypeShape EntityType="KingsmanModel.SuppliesDelivery" Width="1.5" PointX="5.25" PointY="7.375" />
+        <EntityTypeShape EntityType="KingsmanModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.125" />
+        <AssociationConnector Association="KingsmanModel.FK_Client_Gender" />
+        <AssociationConnector Association="KingsmanModel.FK_Client_Size" />
+        <AssociationConnector Association="KingsmanModel.FK_Order_Client" />
+        <AssociationConnector Association="KingsmanModel.FK_Employee_Gender" />
+        <AssociationConnector Association="KingsmanModel.FK_Employee_Position" />
+        <AssociationConnector Association="KingsmanModel.FK_Order_Employee" />
+        <AssociationConnector Association="KingsmanModel.FK_MaterialService_Material" />
+        <AssociationConnector Association="KingsmanModel.FK_SuppliesDelivery_Material" />
+        <AssociationConnector Association="KingsmanModel.FK_MaterialService_Service" />
+        <AssociationConnector Association="KingsmanModel.FK_OrderService_Order" />
+        <AssociationConnector Association="KingsmanModel.FK_OrderService_Service1" />
+        <AssociationConnector Association="KingsmanModel.FK_Service_ServiceType" />
+        <AssociationConnector Association="KingsmanModel.FK_SuppliesDelivery_Supplier" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

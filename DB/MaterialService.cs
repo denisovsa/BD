@@ -12,21 +12,13 @@ namespace Kingsman.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Employees
+    public partial class MaterialService
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Employees()
-        {
-            this.Order = new HashSet<Order>();
-        }
-    
         public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Patronymic { get; set; }
-        public string Position { get; set; }
+        public int MaterialID { get; set; }
+        public int ServiceID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual Material Material { get; set; }
+        public virtual Service Service { get; set; }
     }
 }

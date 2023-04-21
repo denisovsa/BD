@@ -17,15 +17,20 @@ namespace Kingsman.DB
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Service()
         {
+            this.MaterialService = new HashSet<MaterialService>();
             this.OrderService = new HashSet<OrderService>();
         }
     
         public int ID { get; set; }
         public string Name { get; set; }
-        public Nullable<decimal> Cost { get; set; }
+        public decimal Cost { get; set; }
         public string Description { get; set; }
+        public int ServiceTypeID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MaterialService> MaterialService { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderService> OrderService { get; set; }
+        public virtual ServiceType ServiceType { get; set; }
     }
 }

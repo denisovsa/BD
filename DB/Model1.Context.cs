@@ -15,10 +15,10 @@ namespace Kingsman.DB
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Entities : DbContext
+    public partial class KingsmanEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public KingsmanEntities()
+            : base("name=KingsmanEntities")
         {
         }
     
@@ -28,10 +28,19 @@ namespace Kingsman.DB
         }
     
         public virtual DbSet<Client> Client { get; set; }
-        public virtual DbSet<Employees> Employees { get; set; }
+        public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Gender> Gender { get; set; }
+        public virtual DbSet<Material> Material { get; set; }
+        public virtual DbSet<MaterialService> MaterialService { get; set; }
         public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderService> OrderService { get; set; }
+        public virtual DbSet<Position> Position { get; set; }
+        public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<ServiceType> ServiceType { get; set; }
+        public virtual DbSet<Size> Size { get; set; }
+        public virtual DbSet<Supplier> Supplier { get; set; }
+        public virtual DbSet<SuppliesDelivery> SuppliesDelivery { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

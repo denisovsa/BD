@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Kingsman.Windows.LogIn
 {
     /// <summary>
-    /// Логика взаимодействия для RegWindow.xaml
+    /// Логика взаимодействия для SerWindow.xaml
     /// </summary>
-    public partial class RegWindow : Window
+    public partial class SerWindow : Window
     {
-        public RegWindow()
+        public SerWindow()
         {
             InitializeComponent();
         }

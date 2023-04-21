@@ -12,30 +12,22 @@ namespace Kingsman.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Client
+    public partial class Material
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Client()
+        public Material()
         {
-            this.Order = new HashSet<Order>();
+            this.MaterialService = new HashSet<MaterialService>();
+            this.SuppliesDelivery = new HashSet<SuppliesDelivery>();
         }
     
         public int ID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Patronymic { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
-        public Nullable<System.DateTime> Birthday { get; set; }
-        public Nullable<System.DateTime> RegistrationDate { get; set; }
-        public Nullable<int> GenderID { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public Nullable<int> SizeID { get; set; }
+        public string MaterialName { get; set; }
+        public int QuantityInStock { get; set; }
     
-        public virtual Gender Gender { get; set; }
-        public virtual Size Size { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual ICollection<MaterialService> MaterialService { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SuppliesDelivery> SuppliesDelivery { get; set; }
     }
 }
