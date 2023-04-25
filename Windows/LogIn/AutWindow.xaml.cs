@@ -48,7 +48,7 @@ namespace Kingsman.Windows
 
         private void BtnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            RegWindow regWindow = new RegWindow();
+            var regWindow = new RegWindow();
             regWindow.Show();
             this.Close();
         }
