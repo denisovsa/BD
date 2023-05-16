@@ -5,8 +5,110 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kingsman.Windows"
         mc:Ignorable="d"
-        Title="EmployeeWindow" Height="450" Width="800">
+        Title="EmployeeWindow" Height="800" Width="1024"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Список сотрудников"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="30"
+                   FontWeight="Bold"/>
+
+        <ListView x:Name="LvEmloyee" 
+                  Grid.Row="2" 
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="LvService_SelectionChanged">
+
+
+
+            <!--<ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>-->
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding ID}" Width="50" >ID</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding FirstName}">FirstName</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding LastName}">LastName</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Patronymic}">Patronymic</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Email}" >Email</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Phone}">Phone</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Birthaday}">Birthaday</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding RegistrationDate}">RegistrationDate</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding GenderID}">GenderID</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Login}">Login</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding SizeID}">SizeID</GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!--ujdyjfsdfsdf-->
+
+        <!--<ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray"
+                            BorderThickness="2"
+                            Width="200"
+                            Height="150"
+                            Margin="16"
+                            CornerRadius="8">
+                        <StackPanel>
+                            
+                            <TextBlock Text="{Binding Name}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+                            <TextBlock Text="{Binding Cost}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+                            <TextBlock Text="{Binding Description}"
+                                       FontSize="18"
+                                       Margin="5 3"
+                                       TextWrapping="Wrap" FontFamily="Arial Rounded MT Bold"/>
+
+                            <WrapPanel HorizontalAlignment="Center">
+                                <Button x:Name="BtnEdit"
+                                    Width="40"
+                                    Height="40"
+                                    HorizontalAlignment="Left"
+                                    Margin="10 5 30 0"
+                                    Background="{x:Null}"
+                                    BorderThickness="0"
+                                    Click="BtnEdit_Click">
+                                    <Image Source="/Image/Icon/icons8-edit-64.png" />
+                                </Button>
+
+                                
+                            </WrapPanel>
+
+                        </StackPanel>
+
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+
+        <!--<Button x:Name="BtnBack"
+                Content="Назад"
+                FontSize="18"
+                Grid.Row="3"
+                Width="100"
+                Height="40"
+                Background="{x:Null}"
+                BorderThickness="0"
+                HorizontalAlignment="Left"
+                Click="BtnBack_Click">
+
+        </Button>-->
+
     </Grid>
 </Window>
