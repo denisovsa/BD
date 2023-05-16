@@ -21,7 +21,7 @@
                    FontSize="30"
                    FontWeight="Bold"/>
 
-        <ListView x:Name="LvEmloyee" 
+        <ListView x:Name="LvEmployee" 
                   Grid.Row="2" 
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="LvService_SelectionChanged">
@@ -34,6 +34,7 @@
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>-->
 
+            <!--sdfsdaf-->
             <ListView.View>
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding ID}" Width="50" >ID</GridViewColumn>
@@ -46,7 +47,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding RegistrationDate}">RegistrationDate</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding GenderID}">GenderID</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Login}">Login</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding SizeID}">SizeID</GridViewColumn>
+                    
 
                 </GridView>
             </ListView.View>

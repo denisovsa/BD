@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kingsman.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,15 @@ namespace Kingsman.Windows
         public EmployeeWindow()
         {
             InitializeComponent();
+            GetListClient();
+        }
+        private void LvService_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        private void GetListClient()
+        {
+            LvEmployee.ItemsSource = ClassHelper.EF.Context.Employee.ToList();
         }
     }
 }
