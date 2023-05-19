@@ -51,7 +51,19 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        
+        <Button x:Name="BtnBack"
+                Content="Назад"
+                FontSize="18"
+                Grid.Row="3"
+                Width="140"
+                Height="40"
+                Background="{x:Null}"
+                BorderThickness="0"
+                Margin="0,5,0,5"
+                HorizontalAlignment="Left"
+                Click="BtnBack_Click">
+        </Button>
+
         <!--ujdyjfsdfsdf-->
 
         <!--<ListView.ItemTemplate>

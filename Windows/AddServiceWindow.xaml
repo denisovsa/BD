@@ -40,7 +40,11 @@
                      FontSize="18"                    
                      Width="200"
                      Height="30"
-                     Margin="0 8 0 0"/>
+                     Margin="0 8 0 0"
+                     LostFocus="TextBox_LostFocus"
+                     GotFocus="TextBox_GotFocus"
+                     VerticalContentAlignment="Center"
+                     TextWrapping="Wrap"/>
 
             <TextBlock Text="Введите описание услуги"
                        FontSize="18"

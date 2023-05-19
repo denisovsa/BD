@@ -49,7 +49,7 @@ namespace Kingsman.Windows
 
         private void BtnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void BtnPay_Click(object sender, RoutedEventArgs e)
@@ -73,6 +73,7 @@ namespace Kingsman.Windows
                 EF.Context.OrderService.Add(orderService);
 
             }
+            
 
 
 
@@ -82,5 +83,6 @@ namespace Kingsman.Windows
 
             this.Close();
         }
+        
     }
 }

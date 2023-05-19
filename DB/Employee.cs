@@ -28,6 +28,9 @@ namespace Kingsman.DB
         public Nullable<int> GenderID { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public Nullable<System.DateTime> Birthday { get; set; }
     
         public virtual Gender Gender { get; set; }
         public virtual Position Position { get; set; }

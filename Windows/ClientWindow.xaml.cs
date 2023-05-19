@@ -33,5 +33,9 @@ namespace Kingsman.Windows
         {
             LvClient.ItemsSource = ClassHelper.EF.Context.Client.ToList();
         }
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

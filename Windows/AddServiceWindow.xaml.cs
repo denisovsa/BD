@@ -41,6 +41,25 @@ namespace Kingsman.Windows
 
                 pathImage = openFileDialog.FileName;
             }
+            BtnChooseImage.Width = BtnChooseImage.Width;
+            BtnChooseImage.Height = BtnChooseImage.Height;
+        }
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if ((sender as TextBox).Text.Length == 0)
+            {
+                (sender as TextBox).Foreground = Brushes.DarkGray;
+                (sender as TextBox).Text = (string)(sender as TextBox).Tag;
+            }
+        }
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if ((sender as TextBox).Text.Length != 0 && (sender as TextBox).Text == (string)(sender as TextBox).Tag)
+            {
+                (sender as TextBox).Foreground = Brushes.Black;
+                (sender as TextBox).Text = "";
+            }
         }
 
         private void BtnAddService_Click(object sender, RoutedEventArgs e)
