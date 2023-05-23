@@ -58,33 +58,75 @@ namespace Kingsman.Windows
             this.Close();
         }
 
+        //private void BtnPay_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // покупка
+        //    EF.Context.Order.Add(new DB.Order
+        //    {
+        //        ClientID = 1,
+        //        EmployeeID = UserDataClass.Employee.ID,
+        //        DateTime = DateTime.Now,
+        //    }
+        //    );
+
+        //    foreach (var item in ClassHelper.CartServiceClass.ServiceCart)
+        //    {
+        //        DB.OrderService orderService = new DB.OrderService();
+        //        orderService.OrderID = 1;
+        //        orderService.ServiceID = item.ID;
+        //        orderService.Quantity = 1;
+
+        //        EF.Context.OrderService.Add(orderService);
+
+        //    }
+
+
+
         private void BtnPay_Click(object sender, RoutedEventArgs e)
         {
-            // покупка
-            EF.Context.Order.Add(new DB.Order
-            {
-                ClientID = 1,
-                EmployeeID = UserDataClass.Employee.ID,
-                DateTime = DateTime.Now,
-            }
-            );
+                if (ClassHelper.CartServiceClass.ServiceCart.Count != 0)
+                {
+                    DB.Order newOrder = new DB.Order();
 
-            foreach (var item in ClassHelper.CartServiceClass.ServiceCart)
-            {
-                DB.OrderService orderService = new DB.OrderService();
-                orderService.OrderID = 1;
-                orderService.ServiceID = item.ID;
-                orderService.Quantity = 1;
+                    if (ClassHelper.UserDataClass.Employee != null)
+                    {
+                        newOrder.ClientID = 25;
+                        newOrder.EmployeeID = ClassHelper.UserDataClass.Employee.ID;
+                    }
+                    else
+                    {
+                        newOrder.ClientID = 25;
+                        newOrder.EmployeeID = 1;
+                    }
+                    newOrder.DateTime = DateTime.Now;
 
-                EF.Context.OrderService.Add(orderService);
+                    ClassHelper.EF.Context.Order.Add(newOrder);
+                    ClassHelper.EF.Context.SaveChanges();
 
-            }
-            
+                    foreach (DB.Service item in ClassHelper.CartServiceClass.ServiceCart.Distinct())
+                    {
+                        DB.OrderService newOrderService = new DB.OrderService();
+                        newOrderService.OrderID = newOrder.ID;
+                        newOrderService.ServiceID = item.ID;
+                        newOrderService.Quantity = item.Quantity;
+
+                        ClassHelper.EF.Context.OrderService.Add(newOrderService);
+                        ClassHelper.EF.Context.SaveChanges();
+                    }
+
+                    MessageBox.Show("Заказ успешно оформлен!");
+                }
+                else
+                {
+                    MessageBox.Show("Корзина пуста");
+                }
+
+                this.Close();
+
+        
 
 
-
-
-            EF.Context.SaveChanges();
+            //EF.Context.SaveChanges();
             // переход на главную
 
             this.Close();
