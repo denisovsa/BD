@@ -75,6 +75,29 @@ namespace Kingsman.Windows.LogIn
             MessageBox.Show($"Услуга {service.Name} добавлена в корзину!");
         }
 
+        // удаление из корзины
+        private void BtnDel_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            var service = button.DataContext as DB.Service;
+            var result = MessageBox.Show($"Вы уверены что хотите удалить услугу \"{service.Name}\"?", "Удаление услуги", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes)
+            {
+                ClassHelper.EF.Context.Service.Remove(service);
+                ClassHelper.EF.Context.SaveChanges();
+            }
+            else
+            {
+                return;
+            }
+
+            GetListService();
+        }
+
         private void BtnGoToCart_Click(object sender, RoutedEventArgs e)
         {
             CartWindow cartWindow = new CartWindow();
@@ -91,6 +114,11 @@ namespace Kingsman.Windows.LogIn
         {
             EmployeeWindow employeeWindow = new EmployeeWindow();
             employeeWindow.ShowDialog();
+        }
+
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
 

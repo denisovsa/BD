@@ -31,6 +31,12 @@ namespace Kingsman.Windows
         {
             ObservableCollection<DB.Service> listCart = new ObservableCollection<DB.Service>(ClassHelper.CartServiceClass.ServiceCart);
             LvCartService.ItemsSource = listCart;
+            decimal totalSum = 0;
+            foreach (var item in ClassHelper.CartServiceClass.ServiceCart)
+            {
+                totalSum += item.Cost * item.Quantity;
+            }
+            TbTotalSum.Text = Convert.ToString(totalSum) + " ₽";
         }
 
         private void BtnRomoveToCart_Click(object sender, RoutedEventArgs e)

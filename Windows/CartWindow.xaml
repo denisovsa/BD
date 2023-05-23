@@ -99,6 +99,17 @@
 
         </Button>
 
+        <TextBlock x:Name="TbTotalSum"
+                   Height="30"
+                   Width="60"
+                   Margin="0,12,236,8"
+                   Grid.Row="3"
+                   TextAlignment="Left"
+                   HorizontalAlignment="Right"
+                   Text="0"
+                   FontSize="18"
+                   FontWeight="DemiBold"/>
+
         <Button x:Name="BtnPay"
                 Content="Оформить заказ"
                 FontSize="18"
@@ -111,6 +122,16 @@
                 HorizontalAlignment="Right"
                 Click="BtnPay_Click">
         </Button>
+        <TextBlock 
+                Text="Цена:"
+                HorizontalAlignment="Right" 
+                Margin="0,15,300,0" 
+                Height="25"
+                Width="40"
+                Grid.Row="3" 
+                FontSize="15"
+                TextWrapping="Wrap"  
+                VerticalAlignment="Top"/>
 
 
 

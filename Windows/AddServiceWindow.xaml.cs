@@ -44,26 +44,28 @@ namespace Kingsman.Windows
             BtnChooseImage.Width = BtnChooseImage.Width;
             BtnChooseImage.Height = BtnChooseImage.Height;
         }
-        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if ((sender as TextBox).Text.Length == 0)
-            {
-                (sender as TextBox).Foreground = Brushes.DarkGray;
-                (sender as TextBox).Text = (string)(sender as TextBox).Tag;
-            }
-        }
 
-        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if ((sender as TextBox).Text.Length != 0 && (sender as TextBox).Text == (string)(sender as TextBox).Tag)
-            {
-                (sender as TextBox).Foreground = Brushes.Black;
-                (sender as TextBox).Text = "";
-            }
-        }
 
         private void BtnAddService_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(TbNameService.Text) || string.IsNullOrEmpty(TbDiscService.Text) || string.IsNullOrEmpty(TbCostService.Text))
+            {
+                MessageBox.Show("Нет");
+                return;
+            }
+
+            if (TbNameService.Text == Convert.ToString(TbNameService.Tag) || TbDiscService.Text == Convert.ToString(TbDiscService.Tag) ||
+                TbCostService.Text == Convert.ToString(TbCostService.Tag))
+            {
+                MessageBox.Show("Нет");
+                return;
+            }
+
+            if (pathImage == null)
+            {
+                MessageBox.Show("Нет");
+                return;
+            }
 
             //валидация 
 
@@ -78,12 +80,27 @@ namespace Kingsman.Windows
             //{
             //    newService.Image = pathImage;
             //}
+            try
+            {
+                Convert.ToDecimal(TbCostService.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Нет");
+                return;
+            }
+            newService.ServiceTypeID = (CmbTypeService.SelectedItem as DB.ServiceType).ID;
 
             ClassHelper.EF.Context.Service.Add(newService);
             ClassHelper.EF.Context.SaveChanges();
 
+
             MessageBox.Show("Услуга добавлена", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
 
+            this.Close();
+        }
+        private void BtnBack_Click(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
 
