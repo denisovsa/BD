@@ -2,7 +2,7 @@
 <h1> 2ИСП11-20 Денисов Александр </h1> 
 <b> Структура проекта </b>
 
-![image](https://user-images.githubusercontent.com/99315410/224301718-065706e3-b5e0-44bc-9c77-cf01a35a423f.png)
+![image](https://github.com/denisovsa/BDAS/assets/126570631/24461830-af89-4f33-95cc-8cbd66a861f6)
 
 
 Окно авторизации
